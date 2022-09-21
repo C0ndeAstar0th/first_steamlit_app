@@ -36,5 +36,5 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # Draw lines to be ordered 
 streamlit.dataframe(fruityvice_normalized)
 
-import snopwflake.connector
+import snowflake.connector
 
