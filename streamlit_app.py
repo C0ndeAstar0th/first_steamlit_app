@@ -47,8 +47,9 @@ except URLError as e:
 
  #Snowflake part - my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 streamlit.header("The fruit load list contains:")
-streamlit.stop()
+
 fruit_choice_snowflake = streamlit.text_input('What fruit would you like information about?')
+streamlit.stop()
 streamlit.write('Thanks for adding', fruit_choice_snowflake)
 
 
