@@ -45,15 +45,9 @@ try:
 except URLError as e:
  streamlit.error()
 
- #Snowflake part - my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+ #Snowflake part 
 streamlit.header("The fruit load list contains:")
 
-fruit_choice = streamlit.text_input('What fruit would you like information about?')
-streamlit.stop()
-streamlit.write('Thanks for adding', fruit_choice)
-
-
-streamlit.stop()
 #snowflatke-related-functions
 def get_fruit_load_list():
   with  my_cnx.cursor() as my_cur:
