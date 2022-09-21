@@ -46,6 +46,10 @@ except URLError as e:
  streamlit.error()
 
  #Snowflake part
+ fruit_choice = streamlit.text_input('What fruit would you like information about?','starfruit')
+streamlit.write('Thanks for adding', fruit_choice)
+
+my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 streamlit.header("The fruit load list contains:")
 #snowflatke-related-functions
 def get_fruit_load_list():
@@ -59,9 +63,6 @@ if streamlit.button('Get Fruit Load List'):
    my_data_rows=get_fruit_load_list()
    streamlit.dataframe(my_data_rows)
 
-fruit_choice = streamlit.text_input('What fruit would you like information about?','starfruit')
-streamlit.write('Thanks for adding', fruit_choice)
 
-my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 
 streamlit.stop()
